@@ -45,70 +45,14 @@ export default function ProductsPage() {
           </p>
         </div>
 
+        <div className="w-full h-screen">
+  <iframe
+    src="/list.pdf"
+    className="w-full h-full rounded-lg"
+  />
+</div>
         {/* Search and Filter */}
-        <div className="mb-8 space-y-4">
-          <div className="relative max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-            <Input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">
-                    {product.category}
-                  </span>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{product.name}</h3>
-                <img src={product.image} alt="My Pic" style={{
-                    height:'200px',width:'300px',borderRadius:'20px'
-                  }}/>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{product.description}</p>
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="text-2xl font-bold text-primary">{product.price}</span>
-                    {/* <span className="text-muted-foreground text-sm ml-2">per {product.pack}</span> */}
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <Button className="flex-1">Get Quote</Button>
-                  
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">No products found matching your criteria.</p>
-          </div>
-        )}
-
-        {/* Contact CTA */}
+               {/* Contact CTA */}
         <div className="mt-16 bg-muted rounded-2xl p-8 lg:p-12 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">Need a Custom Quote?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto text-pretty">
