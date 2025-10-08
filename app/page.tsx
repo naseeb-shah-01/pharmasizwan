@@ -3,6 +3,37 @@ import { ArrowRight, Shield, Truck, Clock, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
+export const featuredProducts = [
+  {
+    name: "R Cod Softgel ",
+    description: "Omega -3  Fatty Acid,Vitamin E & Wheat Germ Oil Softgel Capsules",
+    price: "₹45",
+    category: "Pain Relief",
+    image:"pic/rcod.jpeg"
+  },
+  {
+    name: "Doxsiz-200",
+    description: "Cefotaxime Dispersible Tablets  200mg",
+    price: "₹120",
+    category: "Antibiotics",
+    image:'/pic/doc.jpeg'
+  },
+  {
+    name: "Sinmoxy CV 625",
+    description: "Amoxicillin Potassuim Clavulanic Tablets 625mg",
+    price: "₹85",
+    category: "Gastric Care",
+    image:"/pic/sin.jpeg"
+  },
+  {
+    name: "Sinmoxy CV ",
+    description: "Amoxicillin Potassuim Clavulanic Oral suspension Ip",
+    price: "₹95",
+    category: "Diabetes Care",
+    image:"/pic/sinmox.jpeg"
+  },
+]
+
 export default function HomePage() {
   const features = [
     {
@@ -22,33 +53,7 @@ export default function HomePage() {
     },
   ]
 
-  const featuredProducts = [
-    {
-      name: "Paracetamol 500mg",
-      description: "Pain relief and fever reducer",
-      price: "₹45",
-      category: "Pain Relief",
-    },
-    {
-      name: "Amoxicillin 250mg",
-      description: "Antibiotic for bacterial infections",
-      price: "₹120",
-      category: "Antibiotics",
-    },
-    {
-      name: "Omeprazole 20mg",
-      description: "Acid reflux and heartburn treatment",
-      price: "₹85",
-      category: "Gastric Care",
-    },
-    {
-      name: "Metformin 500mg",
-      description: "Diabetes management medication",
-      price: "₹95",
-      category: "Diabetes Care",
-    },
-  ]
-
+ 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -101,6 +106,7 @@ export default function HomePage() {
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                  
                 </CardContent>
               </Card>
             ))}
@@ -128,6 +134,9 @@ export default function HomePage() {
                     </span>
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">{product.name}</h3>
+                  <img src={product.image} alt="My Pic" style={{
+                    height:'200px',width:'300px',borderRadius:'20px'
+                  }}/>
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{product.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-bold text-primary">{product.price}</span>

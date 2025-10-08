@@ -5,6 +5,7 @@ import { Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { featuredProducts } from "../page"
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -21,90 +22,7 @@ export default function ProductsPage() {
   ]
 
   const products = [
-    {
-      name: "Paracetamol 500mg",
-      description: "Effective pain relief and fever reducer for adults and children above 12 years",
-      price: "₹45",
-      category: "Pain Relief",
-      pack: "10 tablets",
-    },
-    {
-      name: "Amoxicillin 250mg",
-      description: "Broad-spectrum antibiotic for treating bacterial infections",
-      price: "₹120",
-      category: "Antibiotics",
-      pack: "10 capsules",
-    },
-    {
-      name: "Omeprazole 20mg",
-      description: "Proton pump inhibitor for acid reflux and heartburn treatment",
-      price: "₹85",
-      category: "Gastric Care",
-      pack: "14 tablets",
-    },
-    {
-      name: "Metformin 500mg",
-      description: "First-line medication for type 2 diabetes management",
-      price: "₹95",
-      category: "Diabetes Care",
-      pack: "30 tablets",
-    },
-    {
-      name: "Amlodipine 5mg",
-      description: "Calcium channel blocker for hypertension and angina",
-      price: "₹75",
-      category: "Cardiovascular",
-      pack: "30 tablets",
-    },
-    {
-      name: "Salbutamol Inhaler",
-      description: "Bronchodilator for asthma and COPD relief",
-      price: "₹180",
-      category: "Respiratory",
-      pack: "200 doses",
-    },
-    {
-      name: "Ibuprofen 400mg",
-      description: "Anti-inflammatory pain reliever for various conditions",
-      price: "₹65",
-      category: "Pain Relief",
-      pack: "20 tablets",
-    },
-    {
-      name: "Azithromycin 500mg",
-      description: "Macrolide antibiotic for respiratory and skin infections",
-      price: "₹150",
-      category: "Antibiotics",
-      pack: "3 tablets",
-    },
-    {
-      name: "Pantoprazole 40mg",
-      description: "Proton pump inhibitor for gastroesophageal reflux disease",
-      price: "₹110",
-      category: "Gastric Care",
-      pack: "15 tablets",
-    },
-    {
-      name: "Glimepiride 2mg",
-      description: "Sulfonylurea for blood sugar control in type 2 diabetes",
-      price: "₹125",
-      category: "Diabetes Care",
-      pack: "30 tablets",
-    },
-    {
-      name: "Atorvastatin 20mg",
-      description: "Statin medication for cholesterol management",
-      price: "₹140",
-      category: "Cardiovascular",
-      pack: "30 tablets",
-    },
-    {
-      name: "Montelukast 10mg",
-      description: "Leukotriene receptor antagonist for asthma prevention",
-      price: "₹160",
-      category: "Respiratory",
-      pack: "30 tablets",
-    },
+   ...featuredProducts,
   ]
 
   const filteredProducts = products.filter((product) => {
@@ -165,18 +83,19 @@ export default function ProductsPage() {
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{product.name}</h3>
+                <img src={product.image} alt="My Pic" style={{
+                    height:'200px',width:'300px',borderRadius:'20px'
+                  }}/>
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{product.description}</p>
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <span className="text-2xl font-bold text-primary">{product.price}</span>
-                    <span className="text-muted-foreground text-sm ml-2">per {product.pack}</span>
+                    {/* <span className="text-muted-foreground text-sm ml-2">per {product.pack}</span> */}
                   </div>
                 </div>
                 <div className="flex gap-2">
                   <Button className="flex-1">Get Quote</Button>
-                  <Button variant="outline" size="sm">
-                    Details
-                  </Button>
+                  
                 </div>
               </CardContent>
             </Card>

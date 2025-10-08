@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
-
+import Image from "next/image";
 export function Footer() {
   return (
     <footer className="bg-muted border-t border-border">
@@ -9,9 +9,13 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">SP</span>
-              </div>
+                <Image 
+                      src="/pic/l.jpeg" 
+                      alt="logo" 
+                      width={40}
+                    height={30}
+                      className="rounded-md object-cover"
+                    />
               <span className="font-bold text-lg">Sizwan Pharma</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -62,7 +66,9 @@ export function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  123 Medical Plaza, Healthcare District, Mumbai, Maharashtra 400001
+                GANPATI VIHAR CHHACHHROULI ROAD
+Bilaspur District yamuna nagar haryana pin code 
+135102.
                 </span>
               </div>
             </div>

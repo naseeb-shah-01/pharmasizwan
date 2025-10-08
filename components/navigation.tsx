@@ -53,7 +53,7 @@ export function Navigation() {
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="w-4 h-4" />
-                <span>info@sizwanpharma.com</span>
+                <span>sizwinpharma@gmail.com</span>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function Navigation() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
-                  <span>info@sizwanpharma.com</span>
+                  <span>sizwinpharma@gmail.com</span>
                 </div>
               </div>
             </div>
